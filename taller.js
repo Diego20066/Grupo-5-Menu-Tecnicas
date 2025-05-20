@@ -58,12 +58,13 @@ function menu() {
   let opcion;
 
   do {
-    opcion = prompt(`MENU:\n
-1. REGISTRAR UNA CALIFICACIÓN SOBRE EL SERVICIO(1-5)\n
-2. MOSTRAR CANTIDAD DE VOTOS POR CATEGORÍA\n
-3. MOSTRAR PROMEDIO DE CALIFICACIONES SOBRE EL SERVICIO\n
-4. ELIMINAR ULTIMA CALIFICACIÓN REGISTRADA\n
-5. SALIR\n`);
+    opcion = prompt(`Encuesta de satisfación:\n
+1. Registrar una calificación sobre el servicio(1-5)
+2. Mostrar cantidad de votos por categoría
+3. Mostrar promedio de calificaciones sobre el servicio
+4. Eliminar ultima calificación registrada
+5. Salir\n
+Seleccione una opción:`);
 
     switch (opcion) {
       case "1":
