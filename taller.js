@@ -1,4 +1,3 @@
-
 alert("Bienvenido al menu sobre servicio al cliente")
 let calificaciones = [];
 
@@ -16,13 +15,14 @@ function registrarCalificacion() {
 function mostrarCantidadPorCategoria() {
   let conteo = [0, 0, 0, 0, 0];
 
-  for (let cal of calificaciones) {
+  for (let i = 0; i < calificaciones.length; i++) {
+    let cal = calificaciones[i];
     conteo[cal - 1]++;
   }
 
   let resultado = "";
   for (let i = 0; i < conteo.length; i++) {
-    resultado += `Calificación ${i + 1}: ${conteo[i]} votos\n`;
+    resultado += "Calificación " + (i + 1) + ": " + conteo[i] + " votos\n";
   }
 
   alert(resultado || "No hay calificaciones registradas.");
@@ -34,11 +34,15 @@ function mostrarPromedio() {
     return;
   }
 
-  let suma = calificaciones.reduce((a, b) => a + b, 0);
-  let promedio = suma / calificaciones.length;
+  let suma = 0;
+  for (let i = 0; i < calificaciones.length; i++) {
+    suma += calificaciones[i];
+  }
 
-  alert(`Promedio de calificaciones: ${promedio.toFixed(2)}`);
+  let promedio = suma / calificaciones.length;
+  alert("Promedio de calificaciones: " + promedio.toFixed(2));
 }
+
 
 function eliminarUltimoVoto() {
   if (calificaciones.length > 0) {
