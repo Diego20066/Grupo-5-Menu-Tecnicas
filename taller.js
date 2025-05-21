@@ -2,13 +2,14 @@ alert("Bienvenido al menu sobre servicio al cliente")
 let calificaciones = [];
 
 function registrarCalificacion() {
-  let calificacion = parseInt(prompt("Ingrese una calificación (1-5):"));
+  let entrada = prompt("Ingrese una calificación (1-5):");
 
-  if (calificacion >= 1 && calificacion <= 5) {
-    calificaciones.push(calificacion);
+  if (entrada === "1" || entrada === "2" || entrada === "3" || entrada === "4" ||entrada === "5"
+  ) {
+    calificaciones.push(parseInt(entrada));
     alert("Calificación registrada con éxito.");
   } else {
-    alert("Calificación inválida. Debe estar entre 1 y 5.");
+    alert("Entrada inválida. Ingrese solo un número del 1 al 5.");
   }
 }
 
